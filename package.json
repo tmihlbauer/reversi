@@ -1,0 +1,27 @@
+{
+  "name": "reversi",
+  "version": "1.0.0",
+  "description": "This is is the game of reversi",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmihlbauer/reversi.git"
+  },
+  "keywords": [
+    "reversi",
+    "mhcid"
+  ],
+  "author": "Todd Mihlbauer",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/tmihlbauer/reversi/issues"
+  },
+  "homepage": "https://github.com/tmihlbauer/reversi#readme",
+  "dependencies": {
+    "node-static": "^0.7.9",
+    "socket.io": "^2.0.1"
+  }
+}
