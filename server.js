@@ -1,7 +1,9 @@
+/*******************************************/
+/* Set up static file server */
 /* Include the static file webserverlibrary*/
 var static = require('node-static');
 
-/* Include the http server library */;
+/* Include the http server library */
 var http = require('http');
 
 /* Assume we are runing on Heroku */
@@ -24,9 +26,31 @@ var app = http.createServer(
 		request.addListener('end',
 			function(){
 				file.serve(request,response);
-			}	
-		).resume();
-	}
+				}	
+			).resume();
+		}
     ).listen(port);
 
-console.log('The server is running'); 	
+console.log('The server is running'); 
+
+/******************************************/
+/*         Set up the web socket          */
+
+var io = require('socket.io').listen(app);
+
+io.sockets.on('connection', function (socket) {
+	function log(){
+		var array = ['*** Sever log Message: '];
+		for(var i = 0; i < arguments.length; i++){
+			array.push(arguments[i]);
+			console.log(arguments[i]);
+		}
+		socket.emit('log',array);
+		socket.broadcast.emit('log',array);
+	}
+	log('A website connected to the server');
+	
+	socket.on('disconnect',function(socket){
+		log('A website disconnected from the server');
+	});
+});
