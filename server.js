@@ -133,3 +133,24 @@ io.sockets.on('connection', function (socket) {
 		
 	});
 });
+
+
+	/* send_message command */
+	/* paload:
+	   {
+	 		'room': room to join,
+	  		'username': username of person joining 
+	 	}
+	 	join room_room_response:
+	 	{ 
+	 		'result: 'success',
+	 		'room': room joined,
+	 		'username: username that joined
+	 		'membership': nuber of people in the room including the new one
+	 		}
+	 		or 
+	 		{ 
+	 		'result: 'fail',
+	 		'message': failure message
+	 		}
+	 */
