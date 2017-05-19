@@ -205,7 +205,7 @@ io.sockets.on('connection', function (socket) {
 									result: 'success',
 									room: room,
 									username: username,
-									messege: message
+									message: message
 							};
 							
 		io.sockets.in(room).emit('send_message_response',success_data);
