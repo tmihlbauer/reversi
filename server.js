@@ -527,7 +527,7 @@ io.sockets.on('connection', function (socket) {
 			return;
 		}
 		
-		/* If everything is ok respond to the game_starter  that it was successful */
+		/* If everything is ok respond to the game_starter that it was successful */
 		var game_id = Math.floor((1+Math.random()) * 0x10000).toString(16).substring(1);
 		var success_data = {
 									result: 'success',
@@ -545,7 +545,7 @@ io.sockets.on('connection', function (socket) {
 									game_id: game_id
 							};
 							
-		socket.to(requested_user).emit('game_starter_response', success_data);
+		socket.to(requested_user).emit('game_start_response', success_data);
 		
 		log('game_start successful');
 	
