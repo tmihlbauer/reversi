@@ -10,7 +10,7 @@
 	<style>
 		#header-row {
 			background-image: url('assets/images/grey-green.png');
-		}
+			
 	</style>
 
 
@@ -30,8 +30,10 @@
 		</div>
 		  
 		<div class='row align-items-end'id='players'>
-		  	<div class='col-9 text-left'>
-		  		<h3>Players<h3>
+		  	<div class="col-1"></div>
+		  	<div class='col-8 text-left'>
+		  		<img class="img-" src="assets/images/EmptySquareSm.png"/>
+		  		<h4>Players<h4>
 		  	</div>
 		  	<div class='col-3'>
 		  	</div>
@@ -40,8 +42,11 @@
 		   
 		   
 		<div class='row'>
-		  	<div class='col text-left'>
-		  		<h3>Messages</h3>
+		  	<div class="col-1"></div>
+		  	<div class='col-11 text-left'>
+		  		<h4>Messages</h4>
+		  	</div>
+		  	<div class="col text-left">	
 		  		<form class='form-inline' onsubmit='send_message(); return false;'>
 		  			<label form='send_message_holder' class='col-form-label sr-only'>Enter your chat message</label>
 		  			<input class='form-control mx-auto w-75' type='text' value='' id='send_message_holder' placeholder='Enter your chat message'/>
